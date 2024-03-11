@@ -5,7 +5,11 @@ const Card = (props: {
     size: string
 }) => {
     return (
-        <div className={`Card ${props.size}`}>CARD</div>
+        <div className={`Card ${props.size}`}>
+            <div>TITLE</div>
+            <div>DESCRIPTION</div>
+
+        </div>
     )
 }
 
