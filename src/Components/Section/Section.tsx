@@ -1,11 +1,10 @@
 import './Section.css';
-import Card from '../Card/Card.tsx'
+import Weapons from '../../Pages/Weapons/Weapons.tsx';
 
 const Section = () => {
   return (
     <div className="Section">
-      <Card size="small" />
-      <Card size="big" />
+      <Weapons />
     </div>
   );
 };
