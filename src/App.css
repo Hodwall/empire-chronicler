@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asul&display=swap');
 
 html,
 body,
@@ -10,7 +11,13 @@ body,
   padding: 0;
   width: 100%;
   height: auto;
-  background-image: url('./assets/background-texture.png');
+  /* background-image: url('./assets/background-texture.png'); */
+
+  background-position: 50% 0;
+  background-repeat: repeat;
+  background-image: url(./assets/bg-pattern-paper.png);
+  position: relative;
+  z-index: 3;
 }
 
 .App {
