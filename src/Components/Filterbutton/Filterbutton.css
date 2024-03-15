@@ -1,0 +1,26 @@
+.Buttons {
+    display: flex;
+    height: 4em;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.Basic {
+    font-family: 'IM Fell DW Pica';
+    margin: auto;
+    background-color: hsla(0, 80%, 50%, 0.600);
+    color: white;
+    border: none;
+    border-radius: 20%;
+    padding: 5px;
+    height: 30px;
+    width: 40px;
+    box-shadow: 0 2px 4px darkslategray;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.Basic:hover {
+    background-color: hsla(0, 80%, 50%, 0.800);
+    transition: 0.25s
+}
