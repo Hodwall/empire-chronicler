@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import Drawer from './Components/Drawer/Drawer';
+import NavBar from './Components/NavBar/NavBar';
+import Section from './Components/Section/Section';
+import './App.css';
 
-function App() {
-
+const App = () => {
   return (
-    <div>
-      empire-chronicler
+    <div className="App">
+      <Drawer />
+      <div className="Content">
+        <NavBar />
+        <Section />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

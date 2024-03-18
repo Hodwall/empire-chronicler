@@ -1,0 +1,21 @@
+.Card {
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-rows: auto 60%;
+    outline: 2px solid;
+    height: 10em;
+    width: 20em;
+    margin-top: 5em;
+    margin-left: 5em;
+    border-radius: 5px;
+}
+
+.Card.small {
+    height: 5em;
+    width: 10em;
+}
+
+.Card.big {
+    height: 10em;
+    width: 25em;
+}
