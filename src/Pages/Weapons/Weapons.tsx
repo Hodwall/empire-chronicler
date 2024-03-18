@@ -31,6 +31,9 @@ const Weapons = (props: {
                 <button onClick={() => setFilter(null)}>RESET</button>
                 <button className={`${filter === 'basic' ? 'active' : ''}`} onClick={() => setFilter('basic')}>BASIC</button>
                 <button className={`${filter === 'cavalry' ? 'active' : ''}`} onClick={() => setFilter('cavalry')}>CAVALRY</button>
+                <button className={`${filter === 'fencing' ? 'active' : ''}`} onClick={() => setFilter('fencing')}>FENCING</button>
+                <button className={`${filter === 'brawling' ? 'active' : ''}`} onClick={() => setFilter('brawling')}>BRAWLING</button>
+                <button className={`${filter === 'flail' ? 'active' : ''}`} onClick={() => setFilter('flail')}>FLAIL</button>
             </div>
             <div className="content">
                 {

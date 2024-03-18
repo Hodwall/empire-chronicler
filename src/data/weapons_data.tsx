@@ -10,6 +10,16 @@ const weapons_data = [
     //cavalry
     { category: 'cavalry', name: 'Cavalry Hammer (2H)', price: '3GC', encumbrance: '3', availability: 'scarce', range: 'long', damage: '+SB+5', traits: ['pummel'] },
     { category: 'cavalry', name: 'Lance', price: '1GC', encumbrance: '3', availability: 'rare', range: 'very long', damage: '+SB+6*', traits: ['impact', 'impale'] },
+    //fencing
+    { category: 'fencing', name: 'Foil', price: '5GC', encumbrance: '1', availability: 'scarce', range: 'medium', damage: '+SB+3', traits: ['fast', 'impale', 'precise', 'undamaging'] },
+    { category: 'fencing', name: 'Rapier', price: '5GC', encumbrance: '1', availability: 'scarce', range: 'Long', damage: '+SB+4', traits: ['fast', 'impale'] },
+    //brawling
+    { category: 'brawling', name: 'Unarmed', price: 'N/A', encumbrance: '0', availability: '-', range: 'personal', damage: '+SB+0', traits: ['undamaging'] },
+    { category: 'brawling', name: 'Knuckledusters', price: '2/6', encumbrance: '0', availability: 'common', range: 'Personal', damage: '+SB+2', traits: [] },
+    //flail
+    { category: 'flail', name: 'Grain Flail', price: '10/-', encumbrance: '1', availability: 'common', range: 'average', damage: '+SB+3', traits: ['distract', 'imprecise', 'wrap'] },
+    { category: 'flail', name: 'Flail', price: '2GC', encumbrance: '1', availability: 'scarce', range: 'average', damage: '+SB+5', traits: ['distract', 'wrap'] },
+    { category: 'flail', name: 'Military Flail (2H)', price: '3GC', encumbrance: '2', availability: 'rare', range: 'long', damage: '+SB+6', traits: ['distract', 'impact', 'tiring', 'wrap'] },
 ];
 
 export default weapons_data;
