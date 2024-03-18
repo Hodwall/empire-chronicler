@@ -1,4 +1,20 @@
 .NavBar {
-  height: 4em;
-  outline: 2px solid green;
+  padding: 0.5em 1em;
+  border-bottom: 4px solid hsla(40, 30%, 25%, 0.05);
+  display: flex;
+}
+
+.NavBar input {
+  height: 2.5em;
+  background-color: hsla(40, 30%, 25%, 0.25);
+  border: none;
+  border-radius: 4px;
+  color: hsla(40, 30%, 15%, 0.75);
+  font-family: 'Im DW Fell Pica';
+  padding: 0 1em 0 1em;
+  flex: 1;
+}
+
+.NavBar input:focus {
+  outline: none
 }

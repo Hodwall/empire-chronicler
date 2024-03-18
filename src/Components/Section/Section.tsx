@@ -1,13 +1,12 @@
 import './Section.css';
 import Weapons from '../../Pages/Weapons/Weapons.tsx';
-import Filterbutton from '../Filterbutton/Filterbutton.tsx';
 
-const Section = () => {
-
+const Section = (props: {
+  searchBar: string
+}) => {
   return (
     <div className="Section">
-      <Filterbutton />
-      <Weapons />
+      <Weapons searchBar={props.searchBar} />
     </div>
   );
 };

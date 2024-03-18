@@ -1,8 +1,17 @@
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = (props: {
+  setSearchBar: (query: string) => void;
+}) => {
+
+  const handleChange = (event: any) => {
+    props.setSearchBar(event.target.value);
+  }
+
   return (
-    <div className="NavBar">NAVBAR</div>
+    <div className="NavBar">
+      <input onChange={handleChange} placeholder={`I'm looking for ...`} />
+    </div>
   );
 };
 

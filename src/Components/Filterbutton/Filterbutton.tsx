@@ -1,14 +1,14 @@
-import './Filterbutton.css';
+import './FilterButton.css';
 
-const Filterbutton = () => {
+const FilterButton = () => {
 
 
     return (
-        <div className='Buttons'>
+        <div className='FilterButton'>
             <button className='Basic'>basic</button>
         </div>
 
     )
 }
 
-export default Filterbutton;
+export default FilterButton;

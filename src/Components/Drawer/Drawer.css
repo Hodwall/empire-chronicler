@@ -1,4 +1,4 @@
 .Drawer {
   height: 100vh;
-  outline: 2px solid blue;
+  border-right: 4px solid hsla(40, 30%, 25%, 0.05);
 }

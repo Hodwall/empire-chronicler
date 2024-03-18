@@ -26,6 +26,9 @@ const Weapon = (props: {
                 <div className="price">
                     <GiTwoCoins />{props.price}</div>
             </div>
+            <div className="source">
+                WFRPE 4E, p.245
+            </div>
         </div>
     )
 }
