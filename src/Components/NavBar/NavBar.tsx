@@ -1,5 +1,6 @@
 import './NavBar.css';
 
+
 const NavBar = (props: {
   setSearchBar: (query: string) => void;
 }) => {
