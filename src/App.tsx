@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Drawer from './Components/Drawer/Drawer';
 import NavBar from './Components/NavBar/NavBar';
+import SearchBar from './Components/SearchBar/SearchBar';
 import Section from './Components/Section/Section';
 import './App.css';
 
@@ -10,11 +10,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Drawer setSection={setSection} />
-      <div className="Content">
-        <NavBar setSearchBar={setSearchBar} />
-        <Section searchBar={searchBar} section={section} />
-      </div>
+      <NavBar setSection={setSection} />
+      <SearchBar setSearchBar={setSearchBar} />
+      <Section searchBar={searchBar} section={section} />
     </div>
   );
 };

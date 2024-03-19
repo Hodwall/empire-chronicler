@@ -1,20 +1,22 @@
 .NavBar {
-  padding: 0.5em 1em;
-  border-bottom: 4px solid hsla(40, 30%, 25%, 0.05);
+  border-right: 4px solid hsla(40, 30%, 25%, 0.05);
+
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+
+.NavBar .app-logo {
+  font-family: 'Pirata One';
+  font-size: 1.5em;
+  min-width: 8em;
+}
+
+.NavBar ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
-.NavBar input {
-  height: 2.5em;
-  background-color: hsla(40, 30%, 25%, 0.25);
-  border: none;
-  border-radius: 4px;
-  color: hsla(40, 30%, 15%, 0.75);
-  font-family: 'Im DW Fell Pica';
-  padding: 0 1em 0 1em;
-  flex: 1;
-}
-
-.NavBar input:focus {
-  outline: none
+.NavBar ul li {
+  list-style-type: none;
 }
