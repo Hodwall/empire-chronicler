@@ -1,22 +1,49 @@
 .NavBar {
   border-right: 4px solid hsla(40, 30%, 25%, 0.05);
+  color: hsl(40, 20%, 85%);
+  --navbar-height: 3.5em;
+  --navbar-bg-color: hsl(40, 10%, 10%);
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+}
 
+.NavBar .app-navigation,
+.NavBar .app-drawer {
+  padding: 0.5em;
+}
+
+.NavBar .app-navigation {
   display: grid;
   grid-template-columns: min-content auto;
+  gap: 1em;
 }
 
 .NavBar .app-logo {
   font-family: 'Pirata One';
-  font-size: 1.5em;
-  min-width: 8em;
+  font-size: 1.75em;
+  white-space: nowrap;
 }
 
-.NavBar ul {
+.NavBar .app-sections {
+  font-family: 'IM Fell DW Pica';
+  font-size: 1.2em;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   gap: 1em;
+  align-self: end;
 }
 
-.NavBar ul li {
-  list-style-type: none;
+.NavBar .app-sections>div {
+  cursor: pointer;
+  user-select: none;
+  text-transform: capitalize;
+}
+
+.NavBar .app-sections>div:hover {
+  color: white;
+}
+
+.NavBar .app-sections>div.active {
+  color: hsl(40, 40%, 50%);
 }

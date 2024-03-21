@@ -1,0 +1,21 @@
+.Drawer {
+    position: absolute;
+    top: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+}
+
+.Drawer>div {
+    display: flex;
+    gap: 0.5em
+}
+
+.Drawer .section-link {
+    padding: 0.2em;
+    font-size: 0.75em;
+    font-family: 'Asul';
+    cursor: pointer;
+    user-select: none;
+}

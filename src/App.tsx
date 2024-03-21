@@ -6,12 +6,12 @@ import './App.css';
 
 const App = () => {
   const [searchBar, setSearchBar] = useState('');
-  const [section, setSection] = useState('weapons');
+  const [section, setSection] = useState<string | null>(null);
 
   return (
     <div className="App">
       <NavBar setSection={setSection} />
-      <SearchBar setSearchBar={setSearchBar} />
+      <SearchBar setSearchBar={setSearchBar} section={section} setSection={setSection} />
       <Section searchBar={searchBar} section={section} />
     </div>
   );

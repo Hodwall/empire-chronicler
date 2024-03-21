@@ -1,31 +1,42 @@
+import { useState } from 'react';
+import Drawer from '../Drawer/Drawer';
 import './NavBar.css';
 
 
 const NavBar = (props: {
   setSection: (s: string) => void
 }) => {
-  const sections = [
-    { id: 'board', label: 'Board' },
-    { id: 'classes', label: 'Classes and Careers' },
-    { id: 'skills', label: 'skills and talents' },
-    { id: 'rules', label: 'Rules' },
-    { id: 'adventures', label: 'Between adventures' },
-    { id: 'religion', label: 'Religion and belief' },
-    { id: 'magic', label: 'Magic' },
-    { id: 'consumer', label: 'The consumer\'s guide' },
-    { id: 'bestiary', label: 'Bestiary' },
-    { id: 'weapons', label: 'Weapons' },
-  ]
+  const [sectionId, setSectionId] = useState<string | null>(null);
+  const section_ids = ['character', 'rules', 'magic', 'items', 'enemies', 'board'];
+
+  const handleSetSectionIds = (id: string | null) => {
+    if (id !== sectionId) {
+      setSectionId(id);
+    } else {
+      setSectionId(null);
+    }
+  }
+
   return (
     <div className="NavBar">
-      <div className="app-logo">EMPIRE'S CHRONICLER</div>
-      <ul>
-        {
-          sections.map((section, index) => {
-            return <li key={index} onClick={() => props.setSection(section.id)}>{section.label}</li>
-          })
-        }
-      </ul>
+      <div className="app-navigation">
+        <div className="app-logo">EMPIRE'S CHRONICLER</div>
+        <div className="app-sections">
+          {
+            section_ids.map((section, index) => {
+              return (
+                <div
+                  key={index}
+                  className={sectionId === section ? 'active' : ''}
+                  onClick={() => handleSetSectionIds(section)}
+                >
+                  {section}
+                </div>)
+            })
+          }
+        </div>
+      </div>
+      {(sectionId !== null) && <Drawer sectionId={sectionId} setSection={props.setSection} />}
     </div>
   );
 };
