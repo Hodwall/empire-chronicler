@@ -22,7 +22,7 @@ body,
 
 .App {
   display: grid;
-  grid-template-columns: 15em auto;
+  grid-template-rows: min-content min-content auto;
 
   width: 100%;
   overflow-x: hidden;
