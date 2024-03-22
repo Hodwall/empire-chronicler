@@ -9,33 +9,33 @@ const Drawer = (props: {
     const drawer_sections: DrawerSectionsType = {
         'character': (
             <div>
-                <div className="section-link" onClick={() => props.setSection('character')}>Classes and Careers</div>
-                <div className="section-link" onClick={() => props.setSection('character')}>Skills and Talents</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Classes and Careers</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Skills and Talents</div>
             </div>
         ),
         'rules': (
             <div>
-                <div className="section-link" onClick={() => props.setSection('rules')}>Rules</div>
-                <div className="section-link" onClick={() => props.setSection('rules')}>Between adventures</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Rules</div>
+                <div className="section-link" onClick={() => props.setSection('endeavours')}>Between adventures</div>
             </div>
         ),
         'magic': (
             <div>
-                <div className="section-link" onClick={() => props.setSection('magic')}>Religion and belief</div>
-                <div className="section-link" onClick={() => props.setSection('magic')}>Magic</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Religion and belief</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Magic</div>
             </div>
         ),
         'items': (
             <div>
-                <div className="section-link" onClick={() => props.setSection('items')}>The consumer's guide</div>
+                <div className="section-link" onClick={() => props.setSection('')}>The consumer's guide</div>
                 <div className="section-link" onClick={() => props.setSection('weapons')}>Weapons</div>
-                <div className="section-link" onClick={() => props.setSection('items')}>Armor</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Armor</div>
             </div>
         ),
         'enemies': (
             <div>
-                <div className="section-link" onClick={() => props.setSection('enemies')}>Bestiary</div>
-                <div className="section-link" onClick={() => props.setSection('enemies')}>Enemy Traits</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Bestiary</div>
+                <div className="section-link" onClick={() => props.setSection('')}>Enemy Traits</div>
             </div>
         ),
     }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Weapon from '../Weapon/Weapon.tsx';
+import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
+import endeavours_data from '../../data/endeavours_data.tsx';
 import './Section.css';
 
 
@@ -21,8 +23,11 @@ const Section = (props: {
     case 'weapons':
       filtered_data = [...weapons_data];
       break;
+    case 'endeavours':
+      filtered_data = [...endeavours_data];
+      break;
     default:
-      filtered_data = [...weapons_data];
+      filtered_data = [...weapons_data, ...endeavours_data];
   }
 
   // Further filter data by active filter
@@ -49,7 +54,7 @@ const Section = (props: {
       <button key={'w3'} className={`${filter && filter.value === 'fencing' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'fencing' })}>FENCING</button>,
       <button key={'w4'} className={`${filter && filter.value === 'brawling' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'brawling' })}>BRAWLING</button>,
       <button key={'w5'} className={`${filter && filter.value === 'flail' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'flail' })}>FLAIL</button>
-    ],
+    ]
   };
 
   return (
@@ -82,6 +87,15 @@ const Section = (props: {
                     traits={item.traits}
                   />
                 );
+              case 'endeavour':
+                return (
+                  <Endeavour
+                    key={index}
+                    name={item.name}
+                    content={item.content}
+                    source={item.source}
+                  />
+                )
               default:
                 return <div>{item.name}</div>;
             }

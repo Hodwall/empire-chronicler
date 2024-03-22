@@ -1,29 +1,9 @@
-.Weapon {
+.weapon {
   display: grid;
-  grid-template-rows: min-content min-content auto min-content min-content;
-  width: 13em;
-  height: 10em;
-  padding: 1em;
-  border-radius: 0.5em;
-  color: hsl(33, 20%, 29%);
-  font-family: 'Asul';
-  font-size: 0.75em;
-
-  /* border: 4px solid hsl(33, 30%, 85%); */
-  /* background-color: hsla(34, 30%, 85%, 0.5); */
-  background-color: hsla(34, 40%, 90%, 1);
-  box-shadow: inset 0 0 0 4px hsla(34, 45%, 90%, 1), inset 0 0 0 5px hsla(34, 30%, 80%, 1);
+  grid-template-rows: min-content auto min-content;
 }
 
-.Weapon .name {
-  font-family: 'IM Fell DW Pica';
-  font-size: 1.5em;
-  line-height: 1em;
-  color: #524e47;
-  padding-bottom: 0.25em;
-}
-
-.Weapon .top-stats {
+.weapon .top-stats {
   display: grid;
   grid-template-columns: auto auto;
   padding-bottom: 0.25em;
@@ -32,21 +12,12 @@
   border-bottom: 2px solid hsl(33, 30%, 75%);
 }
 
-.Weapon .bottom-stats {
+.weapon .bottom-stats {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-.Weapon .source {
-  color: hsl(33, 32%, 55%);
-  text-align: right;
-  font-size: 0.85em;
-  border-top: 2px solid hsl(33, 30%, 75%);
-  margin-top: 0.25em;
-  font-style: italic;
-}
-
-.Weapon .price {
+.weapon .price {
   padding: 0 0.3em;
   justify-self: right;
   background-color: hsl(44, 56%, 52%);
@@ -54,6 +25,6 @@
   border-radius: 0.25em;
 }
 
-.Weapon .encumbrance {
+.weapon .encumbrance {
   justify-self: right;
 }
