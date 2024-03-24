@@ -1,43 +1,30 @@
-.Weapon {
+.weapon {
   display: grid;
-  grid-template-rows: min-content min-content auto min-content;
-  width: 13em;
-  height: 10em;
-  padding: 0.5em;
-  border-radius: 0.25em;
-  background-color: #fffaf4;
-  box-shadow: 0 34px 16px -25px rgba(68, 47, 22, .16);
-  color: #6a675e;
-  font-family: 'Asul';
-  font-size: 0.75em;
+  grid-template-rows: min-content auto min-content;
 }
 
-.Weapon .name {
-  font-family: 'IM Fell DW Pica';
-  font-size: 1.5em;
-  line-height: 1em;
-  color: #524e47;
-  padding-bottom: 0.25em;
-}
-
-.Weapon .top-stats {
+.weapon .top-stats {
   display: grid;
   grid-template-columns: auto auto;
   padding-bottom: 0.25em;
+  color: hsl(33, 32%, 55%);
+
+  border-bottom: 2px solid hsl(33, 30%, 75%);
 }
 
-.Weapon .bottom-stats {
+.weapon .bottom-stats {
   display: grid;
   grid-template-columns: auto auto auto;
-
 }
 
-.Weapon .price {
+.weapon .price {
+  padding: 0 0.3em;
   justify-self: right;
   background-color: hsl(44, 56%, 52%);
+
   border-radius: 0.25em;
 }
 
-.Weapon .encumbrance {
+.weapon .encumbrance {
   justify-self: right;
 }

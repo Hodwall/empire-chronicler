@@ -1,14 +1,19 @@
 import './Card.css'
 
 
-const Card = (props: {
-    size: string
-}) => {
+const Card = (
+    props: {
+        title: string,
+        source: string,
+        size: string,
+        children: JSX.Element | JSX.Element[]
+    }
+) => {
     return (
         <div className={`Card ${props.size}`}>
-            <div>TITLE</div>
-            <div>DESCRIPTION</div>
-
+            <div className={"title"}>{props.title}</div>
+            {props.children}
+            <div className={'source'}>{props.source}</div>
         </div>
     )
 }
