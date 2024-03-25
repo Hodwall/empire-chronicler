@@ -1,6 +1,7 @@
 import Card from '../Card/Card';
 import './Endeavour.css';
 
+
 const Endeavour = (props: {
   name: string,
   type: string,
@@ -9,7 +10,7 @@ const Endeavour = (props: {
 }) => {
   return (
     <Card title={props.name} type={props.type} source={props.source} size={'large'}>
-      <div className='content'>{props.content}</div>
+      <div className='content' dangerouslySetInnerHTML={{ __html: props.content }}></div>
     </Card>
   );
 };

@@ -3,9 +3,8 @@ import Weapon from '../Weapon/Weapon.tsx';
 import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
-import './Section.css';
-import ImageList from '@mui/material/ImageList';
 import Masonry from '@mui/lab/Masonry';
+import './Section.css';
 
 
 const Section = (props: {
@@ -59,6 +58,10 @@ const Section = (props: {
       <button key={'w3'} className={`${filter && filter.value === 'fencing' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'fencing' })}>FENCING</button>,
       <button key={'w4'} className={`${filter && filter.value === 'brawling' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'brawling' })}>BRAWLING</button>,
       <button key={'w5'} className={`${filter && filter.value === 'flail' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'flail' })}>FLAIL</button>
+    ],
+    'endeavours': [
+      <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'common' })}>COMMON ENDEAVOURS</button>,
+      <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'class' })}>CLASS ENDEAVOURS</button>
     ]
   };
 

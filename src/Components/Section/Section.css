@@ -17,6 +17,7 @@
   font-size: 0.95em;
   height: 2em;
   width: min-content;
+  white-space: nowrap;
   background-color: hsla(0, 0%, 80%);
   color: hsl(0, 0%, 45%);
   border: none;

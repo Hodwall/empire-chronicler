@@ -16,6 +16,8 @@
   font-family: 'IM Fell DW Pica';
   font-size: 1.75em;
   line-height: 1em;
+  padding-bottom: 0.25em;
+  text-align: left;
 }
 
 .Card .info {
@@ -38,4 +40,19 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
+}
+
+.Card table {
+  margin: 1em 0;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.Card table tr:nth-child(odd) {
+  background: hsl(0, 0%, 88%);
+}
+
+br {
+  margin-bottom: 0.5em;
 }
