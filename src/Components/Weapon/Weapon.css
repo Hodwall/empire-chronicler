@@ -17,6 +17,10 @@
   margin-right: 0.25em;
 }
 
+.weapon .category {
+  text-transform: capitalize;
+}
+
 .weapon .traits {
   display: flex;
   flex-wrap: wrap;

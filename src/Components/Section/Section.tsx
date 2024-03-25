@@ -117,6 +117,7 @@ const Section = (props: {
                       key={index}
                       name={item.name}
                       type={item.type}
+                      category={item.category}
                       price={item.price}
                       encumbrance={item.encumbrance}
                       availability={item.availability}

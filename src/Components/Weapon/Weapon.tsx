@@ -6,6 +6,7 @@ import './Weapon.css';
 const Weapon = (props: {
   name: string,
   type: string,
+  category: string,
   price: string,
   encumbrance: string,
   availability: string,
@@ -26,7 +27,7 @@ const Weapon = (props: {
             props.traits.map((t) => <span className="trait">{t}</span>)
           }
         </div>
-        <div className="category"><span className="label">Category:</span>Melee</div>
+        <div className="category"><span className="label">Category:</span>{props.category}</div>
         <div className="availability"><span className="label">Availability:</span>{props.availability}</div>
         <div className="bottom-stats">
           <div className="encumbrance">
