@@ -1,27 +1,38 @@
 .NavBar {
+  --navbar-height: 3.75em;
+  --navbar-bg-color: hsl(0, 0%, 20%);
   border-right: 4px solid hsla(40, 30%, 25%, 0.05);
-  color: hsl(40, 20%, 85%);
-  --navbar-height: 3.5em;
-  --navbar-bg-color: hsl(40, 10%, 10%);
+  color: hsl(0, 0%, 85%);
   height: var(--navbar-height);
   background-color: var(--navbar-bg-color);
 }
 
 .NavBar .app-navigation,
 .NavBar .app-drawer {
-  padding: 0.5em;
+  padding: 1em 1em 0.5em 1em;
 }
 
 .NavBar .app-navigation {
   display: grid;
   grid-template-columns: min-content auto;
   gap: 1em;
+  align-items: baseline;
 }
 
 .NavBar .app-logo {
   font-family: 'Pirata One';
-  font-size: 1.75em;
+  font-size: 1.9em;
   white-space: nowrap;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  line-height: 0.75em;
+}
+
+.NavBar .app-logo-sub {
+  font-size: 0.48em;
+  text-align: center;
+  color: hsl(0, 0%, 65%);
+  line-height: 1.25em;
 }
 
 .NavBar .app-sections {
@@ -45,5 +56,5 @@
 }
 
 .NavBar .app-sections>div.active {
-  color: hsl(40, 40%, 50%);
+  color: white;
 }

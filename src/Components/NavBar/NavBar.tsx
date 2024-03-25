@@ -4,7 +4,7 @@ import './NavBar.css';
 
 
 const NavBar = (props: {
-  setSection: (s: string) => void
+  setSection: (s: string) => void;
 }) => {
   const [sectionId, setSectionId] = useState<string | null>(null);
   const section_ids = ['character', 'rules', 'magic', 'items', 'enemies', 'board'];
@@ -15,12 +15,17 @@ const NavBar = (props: {
     } else {
       setSectionId(null);
     }
-  }
+  };
 
   return (
     <div className="NavBar">
       <div className="app-navigation">
-        <div className="app-logo">EMPIRE'S CHRONICLER</div>
+        <div className="app-logo">
+          <div>EMPIRE'S CHRONICLER</div>
+          <div className="app-logo-sub">
+            <div>- Warhammer Fantasy RP 4E Compendium -</div>
+          </div>
+        </div>
         <div className="app-sections">
           {
             section_ids.map((section, index) => {
@@ -31,7 +36,7 @@ const NavBar = (props: {
                   onClick={() => handleSetSectionIds(section)}
                 >
                   {section}
-                </div>)
+                </div>);
             })
           }
         </div>

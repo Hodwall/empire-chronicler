@@ -1,32 +1,58 @@
 .Card {
-    display: grid;
-    grid-template-rows: min-content auto min-content;
-    width: 13em;
-    height: 10em;
-    padding: 1em;
-    border-radius: 0.5em;
-    color: hsl(33, 20%, 29%);
-    font-family: 'Asul';
-    font-size: 0.75em;
-    /* border: 4px solid hsl(33, 30%, 85%); */
-    /* background-color: hsla(34, 30%, 85%, 0.5); */
-    background-color: hsla(34, 40%, 90%, 1);
-    box-shadow: inset 0 0 0 4px hsla(34, 45%, 90%, 1), inset 0 0 0 5px hsla(34, 30%, 80%, 1);
+  display: grid;
+  grid-template-rows: min-content auto min-content min-content;
+  border-radius: 0.5em;
+  font-family: "Averia Serif Libre", serif;
+  font-size: 0.8em;
+  text-align: justify;
+  color: hsl(0, 0%, 30%);
+  /* border: 4px solid hsl(33, 30%, 85%); */
+  /* background-color: hsla(34, 30%, 85%, 0.5); */
+  /* background-color: hsla(34, 40%, 90%, 1); */
+  /* box-shadow: inset 0 0 0 4px hsla(34, 45%, 90%, 1), inset 0 0 0 5px hsla(34, 30%, 80%, 1); */
 }
 
 .Card .title {
-    font-family: 'IM Fell DW Pica';
-    font-size: 1.5em;
-    line-height: 1em;
-    color: #524e47;
-    padding-bottom: 0.25em;
+  font-family: 'IM Fell DW Pica';
+  font-size: 1.75em;
+  line-height: 1em;
+  padding-bottom: 0.25em;
+  text-align: left;
+}
+
+.Card .info {
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 0.75em;
+  color: hsl(0, 0%, 65%);
+  font-style: italic;
+  font-size: 0.90em;
 }
 
 .Card .source {
-    color: hsl(33, 32%, 55%);
-    text-align: right;
-    font-size: 0.85em;
-    border-top: 2px solid hsl(33, 30%, 75%);
-    margin-top: 0.25em;
-    font-style: italic;
+  text-align: right;
+}
+
+.Card .divider {
+  height: 20px;
+  background-image: url(../../assets/divider.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.Card table {
+  margin: 1em 0;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.Card table tr:nth-child(odd) {
+  background: hsl(0, 0%, 88%);
+}
+
+br {
+  margin-bottom: 0.5em;
 }

@@ -11,6 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar setSection={setSection} />
+      <div className="separator"></div>
       <SearchBar setSearchBar={setSearchBar} section={section} setSection={setSection} />
       <Section searchBar={searchBar} section={section} />
     </div>

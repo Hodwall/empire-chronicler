@@ -3,7 +3,10 @@ import Weapon from '../Weapon/Weapon.tsx';
 import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
+import Masonry from '@mui/lab/Masonry';
 import './Section.css';
+import qualities_and_flaws_data from '../../data/qualities_and_flaws_data.tsx';
+import Quality from '../Quality/Quality.tsx';
 
 
 const Section = (props: {
@@ -26,8 +29,11 @@ const Section = (props: {
     case 'endeavours':
       filtered_data = [...endeavours_data];
       break;
+    case 'qualities-and-flaws':
+      filtered_data = [...qualities_and_flaws_data];
+      break;
     default:
-      filtered_data = [...weapons_data, ...endeavours_data];
+      filtered_data = [...weapons_data, ...endeavours_data, ...qualities_and_flaws_data];
   }
 
   // Further filter data by active filter
@@ -46,6 +52,9 @@ const Section = (props: {
     });
   }
 
+  // Sort the data alphabetically
+  filtered_data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+
   // Set of filters for each 'page'. Filter uses an object with field parameter so we can configure different filters targetting different kinds of items.
   const filters: any = {
     'weapons': [
@@ -54,6 +63,14 @@ const Section = (props: {
       <button key={'w3'} className={`${filter && filter.value === 'fencing' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'fencing' })}>FENCING</button>,
       <button key={'w4'} className={`${filter && filter.value === 'brawling' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'brawling' })}>BRAWLING</button>,
       <button key={'w5'} className={`${filter && filter.value === 'flail' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'flail' })}>FLAIL</button>
+    ],
+    'endeavours': [
+      <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'common' })}>COMMON ENDEAVOURS</button>,
+      <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'class' })}>CLASS ENDEAVOURS</button>
+    ],
+    'qualities-and-flaws': [
+      <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-quality' })}>ITEM QUALITIES</button>,
+      <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-flaw' })}>ITEM FLAWS</button>
     ]
   };
 
@@ -70,39 +87,56 @@ const Section = (props: {
         )
       }
       <div className="content">
-        {
-          filtered_data.map((item: any, index: number) => {
-            // We use a different react component based on item.type
-            switch (item.type) {
-              case 'weapon':
-                return (
-                  <Weapon
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    encumbrance={item.encumbrance}
-                    availability={item.availability}
-                    range={item.range}
-                    damage={item.damage}
-                    traits={item.traits}
-                  />
-                );
-              case 'endeavour':
-                return (
-                  <Endeavour
-                    key={index}
-                    name={item.name}
-                    content={item.content}
-                    source={item.source}
-                  />
-                )
-              default:
-                return <div>{item.name}</div>;
-            }
-          })
-        }
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }} spacing={2} sx={{ margin: 0 }}>
+          {
+            filtered_data.map((item: any, index: number) => {
+              // We use a different react component based on item.type
+              switch (item.type) {
+                case 'weapon':
+                  return (
+                    <Weapon
+                      key={index}
+                      name={item.name}
+                      type={item.type}
+                      category={item.category}
+                      price={item.price}
+                      encumbrance={item.encumbrance}
+                      availability={item.availability}
+                      range={item.range}
+                      damage={item.damage}
+                      traits={item.traits}
+                    />
+                  );
+                case 'endeavour':
+                  return (
+                    <Endeavour
+                      key={index}
+                      name={item.name}
+                      type={item.type}
+                      content={item.content}
+                      source={item.source}
+                    />
+                  );
+                case 'quality':
+                case 'flaw':
+                  return (
+                    <Quality
+                      key={index}
+                      name={item.name}
+                      type={item.category}
+                      category={item.category}
+                      content={item.content}
+                      source={item.source}
+                    />
+                  );
+                default:
+                  return <div>{item.name}</div>;
+              }
+            })
+          }
+        </Masonry>
       </div>
-    </div>
+    </div >
   );
 };
 
