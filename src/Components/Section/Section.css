@@ -1,51 +1,47 @@
 .Section {
   display: grid;
-  gap: 1em;
   grid-template-rows: min-content auto;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .Section .filter-bar {
   display: flex;
   gap: 0.25em;
-  flex-direction: row-reverse;
-}
-
-.Section .content {
-  display: flex;
-  gap: 0.75em;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.5em;
 }
 
 .Section .filter-bar button {
   font-family: 'IM Fell DW Pica';
-  height: 30px;
+  font-size: 0.95em;
+  height: 2em;
   width: min-content;
-  background-color: hsla(40, 25%, 75%, 0.5);
-  box-shadow: inset 0 0 0 2px hsla(40, 25%, 75%, 0.5), inset 0 0 0 3px hsl(36, 59%, 93%);
-  color: hsl(40, 15%, 40%);
+  background-color: hsla(0, 0%, 80%);
+  color: hsl(0, 0%, 45%);
   border: none;
   padding: 0 1.5em;
   cursor: pointer;
 }
 
 .Section .filter-bar button:first-child {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%, 5% 49%);
 }
 
 .Section .filter-bar button:last-child {
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+  clip-path: polygon(0% 0%, 100% 0, 95% 49%, 100% 100%, 0% 100%);
 }
 
 .Section .filter-bar button:hover {
-  background-color: hsla(40, 25%, 65%, 0.5);
-  transition: 0.25s
+  background-color: hsla(0, 0%, 75%);
+  transition: background-color 0.25s
 }
 
 .Section .filter-bar button.active {
-  background-color: hsla(40, 30%, 25%, 0.75);
-  box-shadow: inset 0 0 0 2px hsla(40, 30%, 25%, 0.5), inset 0 0 0 3px hsl(36, 59%, 93%);
+  background-color: hsla(0, 0%, 45%);
   color: white;
+}
+
+.Section .filter-bar button:active {
+  transform: translateY(2px);
 }

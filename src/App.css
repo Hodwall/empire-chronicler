@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Asul&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
 
 html,
 body,
@@ -22,7 +23,7 @@ body,
 
 .App {
   display: grid;
-  grid-template-rows: min-content min-content auto;
+  grid-template-rows: min-content min-content min-content auto;
 
   width: 100%;
   overflow-x: hidden;
@@ -31,4 +32,10 @@ body,
 .Content {
   display: grid;
   grid-template-rows: min-content auto;
+}
+
+.App .separator {
+  background: url(./assets/bg-pattern-paper-top-bottom.png);
+  background-color: hsl(0, 0%, 20%);
+  height: 7px;
 }

@@ -1,21 +1,33 @@
 .Drawer {
-    position: absolute;
-    top: var(--navbar-height);
-    background-color: var(--navbar-bg-color);
-    width: 100%;
-    padding: 0.5em;
-    display: flex;
+  position: absolute;
+  top: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  width: 100%;
+  padding: 1em;
+  padding-top: 1.5em;
+  display: flex;
+  z-index: 9;
 }
 
 .Drawer>div {
-    display: flex;
-    gap: 0.5em
+  display: flex;
+  gap: 0.5em
 }
 
 .Drawer .section-link {
-    padding: 0.2em;
-    font-size: 0.75em;
-    font-family: 'Asul';
-    cursor: pointer;
-    user-select: none;
+  padding: 0em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  user-select: none;
+  line-height: 2em;
+  display: flex;
+  align-items: middle;
+
+  background-color: hsl(0, 0%, 28%);
+  width: 15em;
+  font-family: 'IM Fell DW Pica';
+}
+
+.Drawer .section-link:hover {
+  background-color: hsl(0, 0%, 30%);
 }

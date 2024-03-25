@@ -7,9 +7,9 @@
   display: grid;
   grid-template-columns: auto auto;
   padding-bottom: 0.25em;
-  color: hsl(33, 32%, 55%);
+  /* color: hsl(33, 32%, 55%); */
 
-  border-bottom: 2px solid hsl(33, 30%, 75%);
+  /* border-bottom: 2px solid hsl(33, 30%, 75%); */
 }
 
 .weapon .bottom-stats {

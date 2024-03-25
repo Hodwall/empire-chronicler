@@ -4,6 +4,8 @@ import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
 import './Section.css';
+import ImageList from '@mui/material/ImageList';
+import Masonry from '@mui/lab/Masonry';
 
 
 const Section = (props: {
@@ -46,6 +48,9 @@ const Section = (props: {
     });
   }
 
+  // Sort the data alphabetically
+  filtered_data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+
   // Set of filters for each 'page'. Filter uses an object with field parameter so we can configure different filters targetting different kinds of items.
   const filters: any = {
     'weapons': [
@@ -70,39 +75,72 @@ const Section = (props: {
         )
       }
       <div className="content">
-        {
-          filtered_data.map((item: any, index: number) => {
-            // We use a different react component based on item.type
-            switch (item.type) {
-              case 'weapon':
-                return (
-                  <Weapon
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    encumbrance={item.encumbrance}
-                    availability={item.availability}
-                    range={item.range}
-                    damage={item.damage}
-                    traits={item.traits}
-                  />
-                );
-              case 'endeavour':
-                return (
-                  <Endeavour
-                    key={index}
-                    name={item.name}
-                    content={item.content}
-                    source={item.source}
-                  />
-                )
-              default:
-                return <div>{item.name}</div>;
-            }
-          })
-        }
+        {/* <ImageList cols={8} rowHeight={160}>
+          {
+            weapons_data.map((item: any, index: number) => {
+              return (
+                <Weapon
+                  key={index}
+                  name={item.name}
+                  price={item.price}
+                  encumbrance={item.encumbrance}
+                  availability={item.availability}
+                  range={item.range}
+                  damage={item.damage}
+                  traits={item.traits}
+                />
+              );
+            })
+          }
+          {
+            endeavours_data.map((item: any, index: number) => {
+              return (
+                <Endeavour
+                  key={index}
+                  name={item.name}
+                  content={item.content}
+                  source={item.source}
+                />
+              );
+            })
+          }
+        </ImageList> */}
+
+        <Masonry columns={{ xs: 2, sm: 4 }} spacing={2} sx={{ margin: 0 }}>
+          {
+            filtered_data.map((item: any, index: number) => {
+              // We use a different react component based on item.type
+              switch (item.type) {
+                case 'weapon':
+                  return (
+                    <Weapon
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      encumbrance={item.encumbrance}
+                      availability={item.availability}
+                      range={item.range}
+                      damage={item.damage}
+                      traits={item.traits}
+                    />
+                  );
+                case 'endeavour':
+                  return (
+                    <Endeavour
+                      key={index}
+                      name={item.name}
+                      content={item.content}
+                      source={item.source}
+                    />
+                  );
+                default:
+                  return <div>{item.name}</div>;
+              }
+            })
+          }
+        </Masonry>
       </div>
-    </div>
+    </div >
   );
 };
 
