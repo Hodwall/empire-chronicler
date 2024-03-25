@@ -1,30 +1,57 @@
 .weapon {
   display: grid;
-  grid-template-rows: min-content auto min-content;
+  grid-template-rows: min-content min-content auto min-content;
 }
 
 .weapon .top-stats {
   display: grid;
   grid-template-columns: auto auto;
-  padding-bottom: 0.25em;
-  /* color: hsl(33, 32%, 55%); */
+  gap: 0.25em;
+  text-transform: capitalize;
+}
 
-  /* border-bottom: 2px solid hsl(33, 30%, 75%); */
+.weapon span.label {
+  font-family: 'Averia Serif Libre', serif;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 0.25em;
+}
+
+.weapon .traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+
+.weapon .traits .trait {
+  text-transform: capitalize;
+  background-color: hsl(0, 0%, 80%);
+  padding: 0 0.25em;
+  border-radius: 2px;
+}
+
+.weapon .availability {
+  text-transform: capitalize;
 }
 
 .weapon .bottom-stats {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+  padding-top: 0.5em;
 }
 
-.weapon .price {
-  padding: 0 0.3em;
-  justify-self: right;
-  background-color: hsl(44, 56%, 52%);
-
-  border-radius: 0.25em;
+.weapon .bottom-stats svg {
+  padding-right: 0.25em;
 }
 
 .weapon .encumbrance {
+  justify-self: left;
+  text-transform: capitalize;
+}
+
+.weapon .price {
   justify-self: right;
+  /* background-color: hsl(44, 56%, 52%); */
+  /* border-radius: 0.25em; */
+  color: hsl(40, 55%, 50%);
 }

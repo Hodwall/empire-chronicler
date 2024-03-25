@@ -116,6 +116,7 @@ const Section = (props: {
                     <Weapon
                       key={index}
                       name={item.name}
+                      type={item.type}
                       price={item.price}
                       encumbrance={item.encumbrance}
                       availability={item.availability}
@@ -129,6 +130,7 @@ const Section = (props: {
                     <Endeavour
                       key={index}
                       name={item.name}
+                      type={item.type}
                       content={item.content}
                       source={item.source}
                     />
