@@ -106,7 +106,7 @@ const Section = (props: {
           }
         </ImageList> */}
 
-        <Masonry columns={{ xs: 2, sm: 4 }} spacing={2} sx={{ margin: 0 }}>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }} spacing={2} sx={{ margin: 0 }}>
           {
             filtered_data.map((item: any, index: number) => {
               // We use a different react component based on item.type
