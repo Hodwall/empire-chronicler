@@ -5,6 +5,8 @@ import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
 import Masonry from '@mui/lab/Masonry';
 import './Section.css';
+import qualities_and_flaws_data from '../../data/qualities_and_flaws_data.tsx';
+import Quality from '../Quality/Quality.tsx';
 
 
 const Section = (props: {
@@ -27,8 +29,11 @@ const Section = (props: {
     case 'endeavours':
       filtered_data = [...endeavours_data];
       break;
+    case 'qualities-and-flaws':
+      filtered_data = [...qualities_and_flaws_data];
+      break;
     default:
-      filtered_data = [...weapons_data, ...endeavours_data];
+      filtered_data = [...weapons_data, ...endeavours_data, ...qualities_and_flaws_data];
   }
 
   // Further filter data by active filter
@@ -62,6 +67,10 @@ const Section = (props: {
     'endeavours': [
       <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'common' })}>COMMON ENDEAVOURS</button>,
       <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'class' })}>CLASS ENDEAVOURS</button>
+    ],
+    'qualities-and-flaws': [
+      <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-quality' })}>ITEM QUALITIES</button>,
+      <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-flaw' })}>ITEM FLAWS</button>
     ]
   };
 
@@ -78,37 +87,6 @@ const Section = (props: {
         )
       }
       <div className="content">
-        {/* <ImageList cols={8} rowHeight={160}>
-          {
-            weapons_data.map((item: any, index: number) => {
-              return (
-                <Weapon
-                  key={index}
-                  name={item.name}
-                  price={item.price}
-                  encumbrance={item.encumbrance}
-                  availability={item.availability}
-                  range={item.range}
-                  damage={item.damage}
-                  traits={item.traits}
-                />
-              );
-            })
-          }
-          {
-            endeavours_data.map((item: any, index: number) => {
-              return (
-                <Endeavour
-                  key={index}
-                  name={item.name}
-                  content={item.content}
-                  source={item.source}
-                />
-              );
-            })
-          }
-        </ImageList> */}
-
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }} spacing={2} sx={{ margin: 0 }}>
           {
             filtered_data.map((item: any, index: number) => {
@@ -135,6 +113,18 @@ const Section = (props: {
                       key={index}
                       name={item.name}
                       type={item.type}
+                      content={item.content}
+                      source={item.source}
+                    />
+                  );
+                case 'quality':
+                case 'flaw':
+                  return (
+                    <Quality
+                      key={index}
+                      name={item.name}
+                      type={item.category}
+                      category={item.category}
                       content={item.content}
                       source={item.source}
                     />

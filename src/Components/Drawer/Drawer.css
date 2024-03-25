@@ -2,15 +2,16 @@
   position: absolute;
   top: var(--navbar-height);
   background-color: var(--navbar-bg-color);
-  width: 100%;
   padding: 1em;
   padding-top: 1.5em;
   display: flex;
   z-index: 9;
+  width: calc(100% - 2em);
 }
 
 .Drawer>div {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5em
 }
 
@@ -22,7 +23,7 @@
   line-height: 2em;
   display: flex;
   align-items: middle;
-
+  min-width: 15em;
   background-color: hsl(0, 0%, 28%);
   width: 15em;
   font-family: 'IM Fell DW Pica';
