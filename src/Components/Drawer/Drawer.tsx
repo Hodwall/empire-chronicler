@@ -35,7 +35,7 @@ const Drawer = (props: {
     ),
     'enemies': (
       <div>
-        <div className="section-link" onClick={() => props.setSection('')}>Bestiary</div>
+        <div className="section-link" onClick={() => props.setSection('enemies')}>Bestiary</div>
         <div className="section-link" onClick={() => props.setSection('')}>Enemy Traits</div>
       </div>
     ),

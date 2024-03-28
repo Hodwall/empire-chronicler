@@ -1,0 +1,51 @@
+.enemy {
+  display: grid;
+  grid-template-rows: min-content min-content auto min-content;
+}
+
+.enemy span.label {
+  font-family: 'Averia Serif Libre', serif;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 0.25em;
+}
+
+.enemy .traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+
+.enemy .traits .trait {
+  text-transform: capitalize;
+  background-color: hsl(0, 0%, 80%);
+  padding: 0 0.25em;
+  border-radius: 2px;
+}
+
+.enemy table {
+  gap: 0px;
+  border-collapse: collapse;
+}
+
+.enemy table th {
+  font-family: 'IM Fell DW Pica';
+}
+
+.enemy table tr {
+  background: transparent !important;
+}
+
+.enemy table tr:first-child {
+  border-bottom: 1px solid black;
+}
+
+.enemy table tr td:not(:last-child),
+.enemy table tr th:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.enemy table tr td:not(:first-child),
+.enemy table tr th:not(:first-child) {
+  border-left: 1px solid black;
+}

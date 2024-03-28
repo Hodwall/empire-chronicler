@@ -3,10 +3,12 @@ import Weapon from '../Weapon/Weapon.tsx';
 import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
+import enemy_data from '../../data/enemy_data.tsx';
 import Masonry from '@mui/lab/Masonry';
 import './Section.css';
 import qualities_and_flaws_data from '../../data/qualities_and_flaws_data.tsx';
 import Quality from '../Quality/Quality.tsx';
+import Enemy from '../Enemy/Enemy.tsx';
 
 
 const Section = (props: {
@@ -32,8 +34,11 @@ const Section = (props: {
     case 'qualities-and-flaws':
       filtered_data = [...qualities_and_flaws_data];
       break;
+    case 'enemies':
+      filtered_data = [...enemy_data];
+      break;
     default:
-      filtered_data = [...weapons_data, ...endeavours_data, ...qualities_and_flaws_data];
+      filtered_data = [...weapons_data, ...endeavours_data, ...qualities_and_flaws_data, ...enemy_data];
   }
 
   // Further filter data by active filter
@@ -127,6 +132,18 @@ const Section = (props: {
                       category={item.category}
                       content={item.content}
                       source={item.source}
+                    />
+                  );
+                case 'enemy':
+                  return (
+                    <Enemy
+                      key={index}
+                      name={item.name}
+                      type={item.type}
+                      description={item.description}
+                      stats={item.stats}
+                      traits={item.traits}
+                      optional={item.optional}
                     />
                   );
                 default:
