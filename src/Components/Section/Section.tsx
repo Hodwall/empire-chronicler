@@ -4,11 +4,13 @@ import Endeavour from '../Endeavour/Endeavour.tsx';
 import weapons_data from '../../data/weapons_data.tsx';
 import endeavours_data from '../../data/endeavours_data.tsx';
 import enemy_data from '../../data/enemy_data.tsx';
+import skills_data from '../../data/skills_data.tsx';
 import Masonry from '@mui/lab/Masonry';
 import './Section.css';
 import qualities_and_flaws_data from '../../data/qualities_and_flaws_data.tsx';
 import Quality from '../Quality/Quality.tsx';
 import Enemy from '../Enemy/Enemy.tsx';
+import Skill from '../Skill/Skill.tsx';
 
 
 const Section = (props: {
@@ -36,6 +38,9 @@ const Section = (props: {
       break;
     case 'enemies':
       filtered_data = [...enemy_data];
+      break;
+    case 'skills':
+      filtered_data = [...skills_data];
       break;
     default:
       filtered_data = [...weapons_data, ...endeavours_data, ...qualities_and_flaws_data, ...enemy_data];
@@ -74,8 +79,8 @@ const Section = (props: {
       <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'class' })}>CLASS ENDEAVOURS</button>
     ],
     'qualities-and-flaws': [
-      <button key={'e1'} className={`${filter && filter.value === 'common' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-quality' })}>ITEM QUALITIES</button>,
-      <button key={'e2'} className={`${filter && filter.value === 'class' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-flaw' })}>ITEM FLAWS</button>
+      <button key={'e1'} className={`${filter && filter.value === 'item-quality' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-quality' })}>ITEM QUALITIES</button>,
+      <button key={'e2'} className={`${filter && filter.value === 'item-flaw' ? 'active' : ''}`} onClick={() => setFilter({ field: 'category', value: 'item-flaw' })}>ITEM FLAWS</button>
     ]
   };
 
@@ -84,7 +89,7 @@ const Section = (props: {
       {
         (props.section && filters[props.section]) && (
           <div className="filter-bar">
-            <button onClick={() => setFilter(null)}>RESET</button>
+            <button className="reset-btn" onClick={() => setFilter(null)}>RESET</button>
             {
               filters[props.section].map((filter: any) => filter)
             }
@@ -92,7 +97,7 @@ const Section = (props: {
         )
       }
       <div className="content">
-        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }} spacing={2} sx={{ margin: 0 }}>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }} spacing={1} sx={{ margin: 0 }}>
           {
             filtered_data.map((item: any, index: number) => {
               // We use a different react component based on item.type
@@ -144,6 +149,17 @@ const Section = (props: {
                       stats={item.stats}
                       traits={item.traits}
                       optional={item.optional}
+                    />
+                  );
+                case 'skill':
+                  return (
+                    <Skill
+                      key={index}
+                      name={item.name}
+                      name_detail={item.name_detail}
+                      type={item.type}
+                      content={item.content}
+                      source={item.source}
                     />
                   );
                 default:

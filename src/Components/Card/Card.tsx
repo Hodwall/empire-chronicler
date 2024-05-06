@@ -4,6 +4,7 @@ import './Card.css';
 const Card = (
   props: {
     title: string,
+    name_detail?: string,
     type: string,
     source: string,
     size: string,
@@ -12,7 +13,10 @@ const Card = (
 ) => {
   return (
     <div className={`Card ${props.size}`}>
-      <div className={"title"}>{props.title}</div>
+      <div className={"title"}>
+        {props.title}
+        {props.name_detail && <span className="name_detail">{props.name_detail}</span>}
+      </div>
       {props.children}
       <div className="info">
         <div className={"type"}>{props.type}</div>

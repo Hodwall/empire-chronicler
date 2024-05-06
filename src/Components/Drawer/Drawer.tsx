@@ -10,7 +10,8 @@ const Drawer = (props: {
     'character': (
       <div>
         <div className="section-link" onClick={() => props.setSection('')}>Classes and Careers</div>
-        <div className="section-link" onClick={() => props.setSection('')}>Skills and Talents</div>
+        <div className="section-link" onClick={() => props.setSection('skills')}>Skills</div>
+        <div className="section-link" onClick={() => props.setSection('')}>Talents</div>
       </div>
     ),
     'rules': (

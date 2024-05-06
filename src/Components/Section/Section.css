@@ -23,6 +23,7 @@
   border: none;
   padding: 0 1.5em;
   cursor: pointer;
+  transition: background-color 0.3s
 }
 
 .Section .filter-bar button:first-child {
@@ -35,7 +36,10 @@
 
 .Section .filter-bar button:hover {
   background-color: hsla(0, 0%, 75%);
-  transition: background-color 0.25s
+}
+
+.Section .filter-bar button.reset-btn:hover {
+  background-color: hsl(0, 15%, 75%);
 }
 
 .Section .filter-bar button.active {

@@ -41,21 +41,23 @@
 .weapon .bottom-stats {
   display: grid;
   grid-template-columns: auto auto;
-  padding-top: 0.5em;
+  padding-top: 0.25em;
+  font-size: 1.15em;
 }
 
 .weapon .bottom-stats svg {
   padding-right: 0.25em;
+  font-size: 1.1em;
 }
 
 .weapon .encumbrance {
   justify-self: left;
   text-transform: capitalize;
+  display: flex;
 }
 
 .weapon .price {
   justify-self: right;
-  /* background-color: hsl(44, 56%, 52%); */
-  /* border-radius: 0.25em; */
-  color: hsl(40, 55%, 50%);
+  color: hsl(40, 40%, 50%);
+  display: flex;
 }

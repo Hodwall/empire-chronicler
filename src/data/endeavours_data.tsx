@@ -67,7 +67,7 @@ const endeavours_data = [
         <tr><td>Scarce</td><td>Challenging (+0)</td></tr>
         <tr><td>Rare</td><td>Difficult (-10)</td></tr>
         <tr><td>Exotic</td><td>Very Hard (-30)</td></tr>
-        </table>
+        </table>np
       The number of SL required to succeed at the Test is also set by
       the GM, using the listed price for the trapping in the Consumers’
       Guide as a reference.

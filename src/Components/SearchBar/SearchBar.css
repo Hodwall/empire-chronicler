@@ -21,16 +21,22 @@
   clip-path: polygon(0% 0%, 100% 0, 95% 49%, 100% 100%, 0% 100%);
   transform: rotateZ(-1deg);
   user-select: none;
-
 }
 
 .SearchBar .section-title button {
+  font-family: 'IM Fell DW Pica';
   background-color: transparent;
   border: none;
   color: hsl(0, 0%, 90%);
-  font-size: 0.85em;
+  font-size: 1em;
   font-weight: bold;
   cursor: pointer;
+  padding-right: 1em;
+}
+
+.SearchBar .section-title button:hover {
+  color: white;
+  transition: 0.3s;
 }
 
 .SearchBar input {
@@ -43,6 +49,11 @@
   font-family: 'IM Fell DW Pica';
   font-size: 1.15em;
   flex: 1;
+}
+
+.SearchBar input:hover {
+  background-color: hsla(0, 0%, 25%, 0.3);
+  transition: background-color 0.3s;
 }
 
 .SearchBar input:focus {
